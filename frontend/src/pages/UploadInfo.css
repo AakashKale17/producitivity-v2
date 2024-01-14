@@ -1,0 +1,48 @@
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2{
+    text-align: center;
+  }
+  form {
+    display: grid;
+    gap: 15px;
+    width: 50%;
+    max-width: 400px; 
+    margin: auto; 
+    
+  }
+  
+  label {
+    font-weight: bold;
+    display: block; 
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: auto; 
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
