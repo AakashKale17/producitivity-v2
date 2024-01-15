@@ -3,11 +3,17 @@ import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/posts.js"
 import postRoutes from "./routes/posts.js"
 import cors from "cors"
+import cookieParser from "cookie-parser";
 
 const app = express()
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+const corsConfig = {
+    credentials: true,
+    origin: true,
+};
+app.use(cors(corsConfig));
+app.use(cookieParser());
 
 app.use("/backend/auth", authRoutes)
 app.use("/backend/user", userRoutes)

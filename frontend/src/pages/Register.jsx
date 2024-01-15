@@ -32,7 +32,7 @@ function Register() {
               })
         }
         catch(err){
-            console.log(err.response.data);
+            setError(err.response.data);
         }
     };
 
@@ -43,6 +43,7 @@ function Register() {
     <h1>Productivity</h1>
     </div>
 
+    <form>
     <div className="inputs">
 
     <div className='input'>
@@ -62,6 +63,7 @@ function Register() {
     <div className="submit-container">
     <div className="submit" onClick={handleSubmit}>Register</div> 
     </div>
+    </form>
 
     {err && <p>{err}</p>}
     
