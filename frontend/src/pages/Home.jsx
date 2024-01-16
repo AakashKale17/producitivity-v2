@@ -13,6 +13,23 @@ function Home() {
     setShowDropdown(!showDropdown);
   };
 
+  const posts = [
+    {
+      id: 1,
+      name: "Contractor No.1",
+      contact: "0123456789",
+      date: "01/14/2024 05:32 PM",
+      description: "This is what is the conversation was about."
+    },
+    {
+      id: 2,
+      name: "Contractor No.2",
+      contact: "9876543210",
+      date: "01/02/2024 05:37 PM",
+      description: "These are the cliffnotes of what was being dicussed."
+    },
+  ]
+
   return (
     <div className="home-container">
       <nav className="navbar">
@@ -40,7 +57,22 @@ function Home() {
         </div>
       </nav>
       <div className="content">
-        <h1>Home Page.</h1>
+        <div className="posts">
+          {posts.map((post)=>(
+            <div className="post" key={post.id}>
+              <div className="post_header">
+              <Link to={`/posts/${post.id}`}>
+                <h1>{post.name}</h1>
+              </Link>
+                <h3 className='post_date'>{post.date}</h3>
+                </div>
+                <div className="post_contact">
+                <h2>Contact no: {post.contact}</h2>
+                </div>
+              <p>{post.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
