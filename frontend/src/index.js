@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login.jsx"
 import UploadInfo from "./pages/UploadInfo.jsx"
 import Register from "./pages/Register.jsx"
+import Single from './pages/Single.jsx';
 import reportWebVitals from "./reportWebVitals.js"
 import { AuthContextProvider } from './context/authContext';
 
@@ -14,6 +15,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/posts/:id' element={<Single />} />
           <Route path='/signin' element={<Login />} />
           <Route path='/info' element={<UploadInfo />} />
           <Route path='/register'element={<Register />} />

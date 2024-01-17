@@ -35,7 +35,8 @@
 
 .post_header{
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .post_contact{
@@ -43,7 +44,8 @@
 }
 
 .post_date{
-  margin-left: 1475px;
+  display: flex;
+  align-items: center;
 }
 
 input {

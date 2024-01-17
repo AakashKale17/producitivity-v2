@@ -43,9 +43,9 @@ function UploadInfo() {
 
   return (
     <div className="upload-info-container">
-      <button onClick={Click}>Back</button>
-      <h2>Upload Information</h2>
       <form onSubmit={handleSubmit}>
+        <button onClick={Click}>Back</button>
+        <h2>Upload Information</h2>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
