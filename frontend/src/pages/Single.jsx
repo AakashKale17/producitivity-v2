@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Single.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/authContext';
 
@@ -32,6 +32,8 @@ function Single() {
     fetchData();
   }, [postId]);
 
+  console.log(post.file)
+
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:8800/backend/posts/${postId}`).then(res => {
@@ -42,6 +44,10 @@ function Single() {
     }
   };
 
+  const showPdf = (pdf) => {
+    window.open(`http://localhost:8800/backend/upload/${pdf}`, "_blank", "noreferrer");
+  }
+
   return (
     <div className="container">
       <button onClick={Click}>Back</button>
@@ -51,7 +57,10 @@ function Single() {
       <h2>Date and Time: {post.date}</h2>
       <h2>Description: {post.description}</h2>
       <h3>Post made by {post.username}</h3>
-      {currentUser.username === post.username && (<div className="submit"><button >Edit</button><button onClick={handleDelete}>Delete</button></div>)}
+      {currentUser.username === post.username && (<div className="submit"><Link to='/info?edit=2' state={post}><button >Edit</button></Link><button onClick={handleDelete}>Delete</button></div>)}
+      <div className="pdf_container">
+        <button onClick={() => showPdf(post.file)}>Show Pdf</button>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,4 @@
-/* Home.css */
-.home-container {
+home-container {
   padding: 20px;
 }
 
@@ -35,8 +34,7 @@
 
 .post_header{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
 }
 
 .post_contact{
@@ -44,8 +42,7 @@
 }
 
 .post_date{
-  display: flex;
-  align-items: center;
+  margin-left: 1000px;
 }
 
 input {
@@ -73,16 +70,19 @@ button {
   padding: 20px;
 }
 
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 10px;
+  padding: 8px; 
   color: black;
   border-radius: 6px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); 
+  height: 50px; 
 }
+
 
 .dropdown-icon {
   display: flex;
@@ -171,18 +171,12 @@ button {
   margin-left: auto; 
 }
 
-.submit {
-  cursor: pointer;
-  padding: 5px; 
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin-left: 5px;
-  margin-right: 10px;
-  font-size: 15px;
-}
-
-.submit:hover {
+.large-button:hover {
   background-color: #45a049;
+}
+.large-button {
+  padding: 10px 16px; 
+  font-size: 15px; 
+  border-radius: 8px;
+  color: white;
 }
