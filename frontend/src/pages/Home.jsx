@@ -6,13 +6,8 @@ import { AuthContext } from '../context/authContext';
 import axios from 'axios';
 
 function Home() {
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const { currentUser, logout } = useContext(AuthContext);
-
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
 
   const [posts, setPosts] = useState([]);
 
@@ -28,49 +23,22 @@ function Home() {
     fetchData();
   }, []);
 
- // const posts = [
- //  {
- //     id: 1,
- //     name: "Contractor No.1",
- //     contact: "0123456789",
- //   date: "01/14/2024 05:32 PM",
- //     description: "This is what is the conversation was about."
- //   },
- //   {
- //     id: 2,
- //     name: "Contractor No.2",
- //     contact: "9876543210",
- //     date: "01/02/2024 05:37 PM",
- //     description: "These are the cliffnotes of what was being dicussed."
- //   },
- // ]
-
   return (
     <div className="home-container">
       <nav className="navbar">
-        <div className="dropdown" onClick={toggleDropdown}>
-          <div className="dropdown-icon">
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-          {showDropdown && (
-            <div className="dropdown-content">
-              <div>Profile</div>
-              <div>Logout</div>
-            </div>
-          )}
-        </div>
         <div className="logo">Productivity</div>
-        <span>{currentUser?.username}</span>
         <div className="submit-container">
-          <div className='submit'><Link to='/info'>Post</Link></div>
-          <div className="submit">{currentUser ? <Link onClick={logout}>Log Out</Link> : <Link to='/signin'>Sign In</Link>}</div>
+          <div className='large-button'><Link to='/info'>Post</Link></div>
+          <div className="large-button">{currentUser ? <Link onClick={logout}>Log Out</Link> : <Link to='/signin'>Sign In</Link>}</div>
         </div>
         <div className="search-bar">
           <input type="text" placeholder="Search..." />
           <button>Search</button>
         </div>
       </nav>
+      <div className="welcome-message" style={{ color: 'red', marginTop: '10px' }}>
+        {currentUser ? `Welcome, ${currentUser.username}!` : 'Welcome!'}
+      </div>
       <div className="content">
         <div className="posts">
           {posts.map((post)=>(

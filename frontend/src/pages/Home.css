@@ -16,7 +16,6 @@ home-container {
   font-size: 1.5rem;
   font-weight: bold;
   color: black;
-  margin-left: 590px;
 }
 
 .search-bar {
@@ -34,7 +33,7 @@ home-container {
 
 .post_header{
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
 .post_contact{
@@ -42,7 +41,8 @@ home-container {
 }
 
 .post_date{
-  margin-left: 1000px;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -171,12 +171,14 @@ button {
   margin-left: auto; 
 }
 
-.large-button:hover {
-  background-color: #45a049;
-}
 .large-button {
-  padding: 10px 16px; 
+  background-color: #45a049;
+  padding: 15px 21px; 
   font-size: 15px; 
   border-radius: 8px;
   color: white;
+}
+
+Link{
+  text-decoration: none;
 }

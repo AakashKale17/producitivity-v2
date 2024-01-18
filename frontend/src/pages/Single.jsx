@@ -57,7 +57,7 @@ function Single() {
       <h2>Date and Time: {post.date}</h2>
       <h2>Description: {post.description}</h2>
       <h3>Post made by {post.username}</h3>
-      {currentUser.username === post.username && (<div className="submit"><Link to='/info?edit=2' state={post}><button >Edit</button></Link><button onClick={handleDelete}>Delete</button></div>)}
+      {currentUser.username === post.username && (<div className="submit-container"><Link to='/info?edit=2' state={post}><button >Edit</button></Link><button onClick={handleDelete}>Delete</button></div>)}
       <div className="pdf_container">
         <button onClick={() => showPdf(post.file)}>Show Pdf</button>
       </div>

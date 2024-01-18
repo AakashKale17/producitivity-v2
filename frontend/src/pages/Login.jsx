@@ -49,7 +49,7 @@ const handleSubmit = async e => {
     <h1>Productivity</h1>
     </div>
   
-    <form>
+    <form className="form-container">
     <div className="inputs">
       
     <div className='input'>

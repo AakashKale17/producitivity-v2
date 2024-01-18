@@ -29,3 +29,17 @@
     margin: auto; 
     
   }
+
+  button {
+    width: auto; 
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
